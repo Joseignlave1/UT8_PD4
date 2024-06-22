@@ -1,0 +1,67 @@
+
+3- Algoritmo de Prim
+
+Conjunto de vértices:
+V = {CC1, CC2, CC3, CC4, CC5, CC6}
+
+Conjunto de aristas:
+T = {
+    (CC1-CC2, 5), (CC1-CC3, 7), (CC1-CC4, 3), (CC1-CC5, 9), (CC1-CC6, 4),
+    (CC2-CC3, 3), (CC2-CC4, 5), (CC2-CC5, 7), (CC2-CC6, 8),
+    (CC3-CC4, 4), (CC3-CC5, 5), (CC3-CC6, 7),
+    (CC4-CC5, 9), (CC4-CC6, 3),
+    (CC5-CC6, 6)
+}
+
+Inicialización:
+Elegimos el nodo CC1 como punto de partida:
+U = {CC1}
+
+Aristas posibles:
+{ (CC1-CC2, 5), (CC1-CC3, 7), (CC1-CC4, 3), (CC1-CC5, 9), (CC1-CC6, 4) }
+
+Primera iteración:
+Arista de menor costo: (CC1-CC4, 3)
+
+Añadimos CC4 a U:
+U = {CC1, CC4}
+
+Aristas posibles:
+{ (CC1-CC2, 5), (CC1-CC3, 7), (CC1-CC5, 9), (CC1-CC6, 4), (CC4-CC5, 9), (CC4-CC6, 3) }
+
+Segunda iteración:
+Arista de menor costo: (CC4-CC6, 3)
+
+Añadimos CC6 a U:
+U = {CC1, CC4, CC6}
+
+Aristas posibles:
+{ (CC1-CC2, 5), (CC1-CC3, 7), (CC1-CC5, 9), (CC1-CC6, 4), (CC4-CC5, 9), (CC6-CC2, 8), (CC6-CC3, 7), (CC6-CC5, 6) }
+
+Tercera iteración:
+Arista de menor costo: (CC1-CC6, 4)
+
+Añadimos CC2 a U:
+U = {CC1, CC4, CC6, CC2}
+
+Aristas posibles:
+{ (CC1-CC2, 5), (CC1-CC3, 7), (CC1-CC5, 9), (CC4-CC5, 9), (CC6-CC2, 8), (CC6-CC3, 7), (CC6-CC5, 6), (CC2-CC3, 3), (CC2-CC4, 5), (CC2-CC5, 7) }
+
+Cuarta iteración:
+Arista de menor costo: (CC2-CC3, 3)
+
+Añadimos CC3 a U:
+U = {CC1, CC4, CC6, CC2, CC3}
+
+Aristas posibles:
+{ (CC1-CC5, 9), (CC4-CC5, 9), (CC6-CC5, 6), (CC2-CC5, 7), (CC3-CC5, 5) }
+
+Quinta iteración:
+Arista de menor costo: (CC3-CC5, 5)
+
+Añadimos CC5 a U:
+U = {CC1, CC4, CC6, CC2, CC3, CC5}
+
+
+Árbol de Expansión Mínima (AAM):
+{ (CC1-CC4, 3), (CC4-CC6, 3), (CC6-CC2, 8), (CC2-CC3, 3), (CC3-CC5, 5) }
